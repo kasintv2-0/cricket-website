@@ -57,8 +57,4 @@ def internal_error(error):
     return render_template('500.html'), 500
 
 if __name__ == '__main__':
-    # Only use this for local development
-    app.run(debug=False)
-else:
-    # This is used by the production WSGI server
-    application = app
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)), debug=False)
