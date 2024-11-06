@@ -6,7 +6,7 @@ import requests
 app = Flask(__name__)
 
 # Add configuration for production
-app.config['SECRET_KEY'] = '763c4b17-bc64-4dfa-974d-627b4aa47c5f'
+app.config['SECRET_KEY'] = 'your-secret-key-here'
 app.config['DEBUG'] = False
 
 class CricketScoreAPI:
@@ -34,8 +34,8 @@ class CricketScoreAPI:
             print(f"Error fetching live matches: {e}")
             return None
 
-# Use environment variable for API key
-API_KEY = os.getenv('763c4b17-bc64-4dfa-974d-627b4aa47c5f', '763c4b17-bc64-4dfa-974d-627b4aa47c5f')
+# Use the provided API key
+API_KEY = '763c4b17-bc64-4dfa-974d-627b4aa47c5f'
 cricket_api = CricketScoreAPI(API_KEY)
 
 @app.route('/')
